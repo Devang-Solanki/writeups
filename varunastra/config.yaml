@@ -14,7 +14,7 @@ blacklisted_patterns:
   - pattern: "(?i)usr/local/go/"
     # Go binaries do not typically contain secrets.
 
-  - pattern: "(?i)(usr/local/(lib|include)/python[\\d.]+/)|(\\/.cache/pip)|(\\/python[\\d.]+/(site|dist)-packages/)"
+  - pattern: "(?i)(usr/(local/lib|lib|include)/python[\d.]+)/|(/.cache/pip)|(/python[\d.]+/(site|dist)-packages/)"
     # These paths are for libraries and often do not contain secrets.
 
   - pattern: "(?i)usr/lib/gems/"
