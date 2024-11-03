@@ -2,7 +2,7 @@ regex_files:
   path: ".config/varunastra/regexes.json"
     # WARNING: In code, this will be interpreted as $HOMEDIR/path
 blacklisted_patterns:
-  - pattern: "(?i)opt/yarn-v[\\d.]+/"
+  - pattern: "(?i)opt/yarn-v[\d.]+/"
     # Yarn packages typically contain no secrets.
 
   - pattern: "(?i)opt/(oracle|google|python/lib|datadog-agent)/"
@@ -32,13 +32,13 @@ blacklisted_patterns:
   - pattern: "(?i)var/(?:tmp|cache|run)"
     # These are transient directories and unlikely to contain secrets.
 
-  - pattern: "(^(?i)test|\\/test|-test|_test|\\.test)"
+  - pattern: "(^(?i)test|/test|-test|_test|\\.test)"
     # Test files typically do not contain real credentials.
 
   - pattern: "(?i)example"
     # Example files are usually placeholders, not secrets.
 
-  - pattern: "(?i)\\/vendor\\/"
+  - pattern: "(?i)/vendor/"
 
   - pattern: "(?i)private/ssl-cert-snakeoil\\.key"
     # This is often a default placeholder and does not represent real secrets.
@@ -46,17 +46,10 @@ blacklisted_patterns:
   - pattern: "(?i)dist/awscli/botocore/"
     # Library paths do not contain secrets.
 
-  - pattern: "(?i)\\/openjdk-[\\d.]+/"
+  - pattern: "(?i)/openjdk-[\d.]+/"
     # Java libraries typically do not have sensitive information.
 
-  - pattern: "(?i)\\/locales?/"
-    # Locale files contain language data, not secrets.
+  - pattern: "(?i)/locales?/"
 
-  - pattern: "(?i)usr/local/go/"
-    # Go binaries do not typically contain secrets.
-
-  - pattern: "(?i)(usr/local/(lib|include)/python[\\d.]+/)|(\\/.cache/pip)|(\\/python[\\d.]+/(site|dist)-packages/)"
-    # These paths are for libraries and often do not contain secrets.
-    
   - pattern: "(?i)\\.npm/_cacache/"
     # npm cache directory typically does not contain secrets.
