@@ -57,3 +57,6 @@ blacklisted_patterns:
 
   - pattern: "(?i)(usr/local/(lib|include)/python[\\d.]+/)|(\\/.cache/pip)|(\\/python[\\d.]+/(site|dist)-packages/)"
     # These paths are for libraries and often do not contain secrets.
+    
+  - pattern: "(?i)\\.npm/_cacache/"
+    # npm cache directory typically does not contain secrets.
