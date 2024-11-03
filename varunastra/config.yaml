@@ -2,7 +2,7 @@ regex_files:
   path: ".config/varunastra/regexes.json"
     # WARNING: In code, this will be interpreted as $HOMEDIR/path
 blacklisted_patterns:
-  - pattern: "(?i)opt/yarn-v[\d.]+/"
+  - pattern: "(?i)opt/yarn-v[\\d.]+/"
     # Yarn packages typically contain no secrets.
 
   - pattern: "(?i)opt/(oracle|google|python/lib|datadog-agent)/"
@@ -14,7 +14,7 @@ blacklisted_patterns:
   - pattern: "(?i)usr/local/go/"
     # Go binaries do not typically contain secrets.
 
-  - pattern: "(?i)(usr/(local/lib|lib|include)/python[\d.]+)/|(/.cache/pip)|(/python[\d.]+/(site|dist)-packages/)"
+  - pattern: "(?i)(usr/(local/lib|lib|include)/python[\\d.]+)/|(/.cache/pip)|(/python[\\d.]+/(site|dist)-packages/)"
     # These paths are for libraries and often do not contain secrets.
 
   - pattern: "(?i)usr/lib/gems/"
@@ -46,7 +46,7 @@ blacklisted_patterns:
   - pattern: "(?i)dist/awscli/botocore/"
     # Library paths do not contain secrets.
 
-  - pattern: "(?i)/openjdk-[\d.]+/"
+  - pattern: "(?i)/openjdk-[\\d.]+/"
     # Java libraries typically do not have sensitive information.
 
   - pattern: "(?i)/locales?/"
